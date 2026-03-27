@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M&S Estudio Contable – Portada</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Bebas+Neue&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --cream: #F0EDE6;
+    --black: #1A1A1A;
+    --dark: #2A2A2A;
+    --border: #D0CBC0;
+    --mid: #8A8580;
+    --light: #E8E4DC;
+  }
+  body {
+    background: #C8C4BC;
+    font-family: 'Space Grotesk', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 20px;
+    min-height: 100vh;
+  }
+  .page {
+    background: var(--cream);
+    width: 794px;
+    min-height: 1123px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .top-bar { height: 6px; background: var(--black); }
+  .bottom-bar { height: 4px; background: var(--black); }
+
+  /* Universidad banner */
+  .uni-banner {
+    background: var(--black);
+    padding: 10px 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .uni-name {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(240,237,230,0.65);
+    font-weight: 300;
+  }
+  .entregable-badge {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--cream);
+    border: 0.5px solid rgba(240,237,230,0.4);
+    padding: 3px 12px;
+  }
+
+  /* Header con logo + nombre estudio */
+  .header {
+    padding: 48px 64px 44px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+  .logo-img {
+    width: 170px;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+  .header-divider {
+    width: 1px;
+    height: 80px;
+    background: var(--border);
+    flex-shrink: 0;
+  }
+  .header-text {}
+  .studio-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-bottom: 8px;
+  }
+  .studio-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 42px;
+    letter-spacing: 0.06em;
+    color: var(--black);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .studio-tagline {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--mid);
+    font-weight: 300;
+  }
+
+  /* Content */
+  .content { flex: 1; padding: 0 64px; display: flex; flex-direction: column; }
+
+  /* Descripción institucional */
+  .description {
+    padding: 40px 0;
+    border-bottom: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 28px;
+  }
+  .desc-block-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .desc-block-title::before {
+    content: '';
+    display: inline-block;
+    width: 14px;
+    height: 1px;
+    background: var(--mid);
+  }
+  .desc-block-value { font-size: 12.5px; font-weight: 600; color: var(--black); line-height: 1.5; }
+  .desc-block-detail { font-size: 10.5px; color: var(--mid); margin-top: 5px; line-height: 1.65; }
+
+  /* Organigrama */
+  .org { padding: 40px 0 36px; border-bottom: 1px solid var(--border); }
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .section-label::before { content: ''; display: inline-block; width: 20px; height: 1px; background: var(--mid); }
+
+  .org-tree { display: flex; flex-direction: column; align-items: center; gap: 0; }
+
+  /* Capa socia */
+  .org-row { display: flex; gap: 16px; justify-content: center; }
+  .org-card {
+    background: var(--black);
+    color: var(--cream);
+    padding: 16px 24px;
+    min-width: 190px;
+  }
+  .org-card.secondary {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--black);
+    min-width: 170px;
+  }
+  .org-card-role {
+    font-family: 'DM Mono', monospace;
+    font-size: 7.5px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    opacity: 0.5;
+    margin-bottom: 6px;
+  }
+  .org-card.secondary .org-card-role { color: var(--mid); opacity: 1; }
+  .org-card-name { font-size: 13px; font-weight: 600; line-height: 1.3; }
+  .org-card.secondary .org-card-name { font-size: 12px; font-weight: 600; color: var(--dark); }
+
+  /* Conectores */
+  .v-line { width: 1px; height: 20px; background: var(--border); }
+  .h-connector {
+    position: relative;
+    width: 370px;
+    height: 1px;
+    background: var(--border);
+  }
+  .org-secondary-row {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    position: relative;
+  }
+  .org-col { display: flex; flex-direction: column; align-items: center; }
+  .org-col .v-line { height: 20px; }
+
+  /* Integrantes */
+  .integrantes { padding: 36px 0; }
+  .integrantes-grid { display: flex; gap: 12px; }
+  .integrante-card {
+    flex: 1;
+    border: 1px solid var(--border);
+    padding: 16px 18px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .integrante-initial {
+    width: 40px;
+    height: 40px;
+    background: var(--black);
+    color: var(--cream);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 16px;
+    letter-spacing: 0.05em;
+    flex-shrink: 0;
+  }
+  .integrante-name { font-size: 12.5px; font-weight: 600; color: var(--black); line-height: 1.3; }
+  .integrante-role {
+    font-family: 'DM Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-top: 3px;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 20px 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--light);
+  }
+  .footer-left {
+    font-family: 'DM Mono', monospace;
+    font-size: 8.5px;
+    letter-spacing: 0.15em;
+    color: var(--mid);
+    text-transform: uppercase;
+  }
+  .footer-right { display: flex; align-items: center; gap: 20px; }
+  .footer-item {
+    font-family: 'DM Mono', monospace;
+    font-size: 8.5px;
+    letter-spacing: 0.12em;
+    color: var(--mid);
+    text-transform: uppercase;
+  }
+  .year-badge {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    color: var(--black);
+    background: var(--cream);
+    border: 1px solid var(--black);
+    padding: 3px 10px;
+  }
+
+  /* Print */
+  .print-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #1A1A1A;
+    color: #F0EDE6;
+    border: none;
+    padding: 10px 20px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  .print-btn:hover { background: #333; }
+  @media print {
+    body { background: white; padding: 0; }
+    .print-btn { display: none; }
+    .page { width: 100%; box-shadow: none; }
+  }
+</style>
+</head>
+<body>
+
+<button class="print-btn" onclick="window.print()">Imprimir / PDF</button>
+
+<div class="page">
+  <div class="top-bar"></div>
+
+  <!-- UNIVERSIDAD -->
+  <div class="uni-banner">
+    <span class="uni-name">Universidad Católica de Salta</span>
+    <span class="entregable-badge">Entregable N° 1</span>
+  </div>
+
+  <!-- HEADER -->
+  <div class="header">
+    <img class="logo-img"
+      src="Black_White_Minimal_Modern_Simple_Bold_Business_Mag_Logo.jpg"
+      alt="M&S Logo" />
+    <div class="header-divider"></div>
+    <div class="header-text">
+      <div class="studio-label">Nombre del estudio</div>
+      <div class="studio-name">M&amp;S Estudio Contable</div>
+      <div class="studio-tagline">Claridad Financiera Para Su Empresa · Salta, 2026</div>
+    </div>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="content">
+
+    <!-- DESCRIPCIÓN INSTITUCIONAL -->
+    <div class="description">
+      <div class="desc-block">
+        <div class="desc-block-title">Tipo de Estudio</div>
+        <div class="desc-block-value">Contable · Impositivo · Laboral</div>
+        <div class="desc-block-detail">Auditoría interna, liquidación de sueldos, balances y declaraciones juradas</div>
+      </div>
+      <div class="desc-block">
+        <div class="desc-block-title">Especialización</div>
+        <div class="desc-block-value">PyMEs Agrícolas y Comercio Minorista</div>
+        <div class="desc-block-detail">Agro, gastronomía, servicios y retail regional</div>
+      </div>
+      <div class="desc-block">
+        <div class="desc-block-title">Área de Influencia</div>
+        <div class="desc-block-value">Salta Capital y NOA</div>
+        <div class="desc-block-detail">Presencia en Salta, Jujuy, Tucumán y clientes nacionales</div>
+      </div>
+    </div>
+
+    <!-- ORGANIGRAMA -->
+    <div class="org">
+      <div class="section-label">Organigrama Profesional</div>
+
+      <div class="org-tree">
+
+        <!-- Socia Gerente -->
+        <div class="org-row">
+          <div class="org-card">
+            <div class="org-card-role">Socia Gerente</div>
+            <div class="org-card-name">Debrin, Sofía</div>
+          </div>
+        </div>
+
+        <!-- Vertical -->
+        <div class="v-line"></div>
+        <!-- Horizontal -->
+        <div class="h-connector"></div>
+
+        <!-- Contadores Senior -->
+        <div class="org-secondary-row">
+          <div class="org-col">
+            <div class="v-line"></div>
+            <div class="org-card secondary">
+              <div class="org-card-role">Contadora Senior</div>
+              <div class="org-card-name">Gómez, Maite</div>
+            </div>
+          </div>
+          <div class="org-col">
+            <div class="v-line"></div>
+            <div class="org-card secondary">
+              <div class="org-card-role">Contadora Senior</div>
+              <div class="org-card-name">Carrizo, Solana</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- INTEGRANTES -->
+    <div class="integrantes">
+      <div class="section-label">Integrantes del Grupo</div>
+      <div class="integrantes-grid">
+
+        <div class="integrante-card">
+          <div class="integrante-initial">DS</div>
+          <div>
+            <div class="integrante-name">Debrin, Sofía</div>
+            <div class="integrante-role">Socia Gerente</div>
+          </div>
+        </div>
+
+        <div class="integrante-card">
+          <div class="integrante-initial">GM</div>
+          <div>
+            <div class="integrante-name">Gómez, Maite</div>
+            <div class="integrante-role">Contadora Senior</div>
+          </div>
+        </div>
+
+        <div class="integrante-card">
+          <div class="integrante-initial">CS</div>
+          <div>
+            <div class="integrante-name">Carrizo, Solana</div>
+            <div class="integrante-role">Contadora Senior</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-left">M&amp;S Estudio Contable · Salta, Argentina</div>
+    <div class="footer-right">
+      <div class="footer-item">Uso Académico</div>
+      <div class="footer-item">·</div>
+      <div class="footer-item">Entregable N° 1</div>
+      <div class="year-badge">2026</div>
+    </div>
+  </div>
+
+  <div class="bottom-bar"></div>
+</div>
+
+</body>
+</html>
